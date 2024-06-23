@@ -1,0 +1,467 @@
+/* Global reset and basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  /* Background image or video styles */
+  /* Example: background: url('../watermarked_preview.mp4') no-repeat center fixed; */
+}
+
+/* Video container styles */
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+/* Header container styles */
+.header-container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgba(8, 27, 0, 0.204);
+  /* Adjust header background color and opacity */
+}
+
+/* Header styles */
+.header {
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styles */
+.logo {
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Menu icon styles */
+#menu-icon {
+  font-size: 2.4rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+/* Menu icon lines styles */
+.menu-icon-line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Navbar container styles */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+/* Navbar link styles */
+.navbar a {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #090202;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: color 0.3s;
+  padding: 0 10px;
+}
+
+/* Navbar link underline styles */
+.navbar a:after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -3px;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+/* Expand navbar link underline on hover */
+.navbar a:hover:after {
+  width: 100%;
+  background-color: #ff3c78;
+}
+
+/* Change text color on navbar link hover */
+.navbar a:hover {
+  color: rgba(202, 30, 21, 0.957);
+}
+
+/* Media query for screens up to 1024px (tablets and smaller screens) */
+@media (max-width: 1024px) {
+  /* Adjust padding in the header for smaller screens */
+  .header {
+    padding: 20px;
+  }
+
+  /* Navbar styles for smaller screens */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    background-color: rgba(177, 163, 163, 0.586);
+    color: white;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: none;
+  }
+
+  /* Show navbar when active */
+  .navbar.active {
+    transform: translateX(0%);
+    display: flex;
+  }
+
+  /* Show menu icon on smaller screens */
+  #menu-icon {
+    display: block;
+  }
+}
+
+/* Media query for screens up to 768px (mobile devices) */
+@media (max-width: 768px) {
+  /* Adjust header padding for mobile devices */
+  .header {
+    padding: 15px;
+  }
+
+  /* Adjust navbar styles for mobile devices */
+  .navbar {
+    height: 20vh;
+  }
+
+  /* Adjust home section styles for mobile devices */
+  .home {
+    padding: 50px 10% 0;
+  }
+
+  /* Adjust home contentstyles for mobile devices */
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust home image styles for mobile devices */
+  .home-img {
+    width: 50vw;
+  }
+
+  /* Adjust about section styles for mobile devices */
+  .About {
+    padding: 50px 10%;
+  }
+
+  /* Adjust about content styles for mobile devices */
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust about image styles for mobile devices */
+  .about-img {
+    width: 50vw;
+  }
+
+  /* Adjust portfolio section styles for mobile devices */
+  .Portfolio-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust portfolio item styles for mobile devices */
+  .Portfolio-content div {
+    width: 80%;
+    margin-top: 60px;
+  }
+
+  /* Adjust contact section styles for mobile devices */
+  .Contact {
+    padding: 20px;
+  }
+}
+
+/* Home section styles */
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 70px 10% 0;
+}
+
+/* Home content styles */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+/* Home text styles */
+.home-text {
+  width: 60%;
+}
+
+/* Home heading styles */
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* Home title styles */
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+}
+
+/* Home paragraph styles */
+.home-content p {
+  font-size: 20px;
+}
+
+/* Home science section styles */
+.home-sci {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Home science link styles */
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid rgb(0, 76, 255);
+  border-radius: 50%;
+  font-size: 20px;
+  color: rgb(0, 76, 255);
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+}
+
+/* Home science link hover styles */
+.home-sci a:hover {
+  background: rgb(0, 183, 255);
+  color: #081b00;
+}
+
+/* Home image section styles */
+.home-img {
+  width: 25vw;
+  text-align: center;
+}
+
+/* Home image styles */
+.home-img img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.911);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Home image hover styles */
+.home-img img:hover {
+  transform: scale(1.1);
+  filter: brightness(80%);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Button styles */
+.btn-box {
+  display: inline-block;
+  background-color: rgba(0, 234, 255, 0.681);
+  color: #081b00;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border: 2px solid rgb(0, 30, 255);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button hover styles */
+.btn-box:hover {
+  background-color: #081b0013;
+  color: rgba(255, 153, 0, 0.72);
+}
+
+/* Button active styles */
+.btn-box:active {
+  transform: translateY(1px);
+}
+
+/* About section styles */
+.About {
+  padding: 100px 10%;
+  margin-top: 60px;
+}
+
+/* About content styles */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* About image styles */
+.about-img {
+  width: 45%;
+  position: relative;
+}
+
+/* About image hover styles */
+.about-img img:hover {
+  transform: scale(1.05);
+}
+
+/* About text styles */
+.about-text {
+  width: 50%;
+}
+
+/* About heading styles */
+.about-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* About paragraph styles */
+.about-content p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Portfolio section styles */
+.Portfolio-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 100px 10%;
+}
+
+/* Portfolio item styles */
+.Portfolio-content div {
+  width: 30%;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 120px;
+}
+
+/* Portfolio item hover styles */
+.Portfolio-content div:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio heading styles */
+.Portfolio-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Portfolio paragraph styles */
+.Portfolio-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Portfolio button styles */
+.Portfolio-content button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgba(0, 174, 255, 0.507);
+  color: #081b00;
+  border: 2px solid rgb(0, 30, 255);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Portfolio button hover styles */
+.Portfolio-content button:hover {
+  background-color: #081b000e;
+  color: rgba(255, 153, 0, 0.72);
+}
+
+/* Portfolio button active styles */
+.Portfolio-content button:active {
+  transform: translateY(1px);
+}
+
+/* Contact section styles */
+.Contact {
+  width: 100vw;
+  max-width: 100vw;
+  background-color: #2b070768;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Contact content styles */
+.Contact-content {
+  text-align: center;
+  color: #fff;
+}
+
+/* Contact heading styles */
+.Contact-content h1 {
+  font-size: 2.5rem;
+}
