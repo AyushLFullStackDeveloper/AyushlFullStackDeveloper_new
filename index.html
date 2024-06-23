@@ -145,11 +145,12 @@
                 left: 0;
                 width: 100%;
                 height: 25vh;
-                background-color: rgba(177, 163, 163, 0.586);
+                background-color: rgba(192, 192, 192, 0.089);
                 color: white;
                 flex-direction: row;
                 justify-content: space-around;
                 align-items: center;
+                font-size: xx-large;
                 z-index: 99;
                 transform: translateX(-100%);
                 transition: transform 0.3s ease-in-out;
@@ -178,10 +179,11 @@
             .navbar {
                 height: auto;
                 width: 100%;
-                background-color: rgba(177, 163, 163, 0.9);
+                background-color: rgba(192, 192, 192, 0.363);
                 flex-direction: column;
                 justify-content: center;
                 padding: 20px 0;
+                font-size: xx-large;
             }
 
             .navbar a {
@@ -219,6 +221,7 @@
 
             .about-img {
                 width: 70vw;
+                height: 40vh;
                 margin-bottom: 20px;
             }
 
@@ -300,9 +303,8 @@
         }
 
         .home-img img {
-            width: 100%;
-            border-radius: 50%;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            width: 33vw;
+            height: 70vh;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
@@ -323,6 +325,10 @@
         }
 
         @media (max-width: 991px) {
+            .home {
+                padding: 70px 5%;
+            }
+
             .home-content {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -334,15 +340,21 @@
             }
 
             .home-img {
-                flex: 0 0 60%;
-                max-width: 60%;
+                flex: 0 0 100%;
+                max-width: 100vw;
                 margin-bottom: 30px;
+            }
+
+            .home-img img {
+                width: 59vw;
+                height: 35vh;
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             }
         }
 
         @media (max-width: 768px) {
             .home {
-                padding: 50px 5% 0;
+                padding: 50px 5%;
             }
 
             .home-text h3 {
@@ -360,6 +372,7 @@
             .home-img {
                 flex: 0 0 80%;
                 max-width: 80%;
+                margin: 0 auto 30px;
             }
 
             .btn-box {
@@ -374,8 +387,8 @@
             }
 
             .home-img {
-                flex: 0 0 100%;
-                max-width: 100%;
+                max-width: 80%;
+                margin: 0 auto 30px;
             }
         }
 
@@ -395,19 +408,18 @@
 
         .about-img {
             flex: 0 0 45%;
-            max-width: 45%;
+            max-width: 35%;
         }
 
         .about-img img {
-            width: 100%;
+            width: 30vw;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .about-img img:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+
         }
 
         .about-text {
@@ -669,8 +681,7 @@
     <section class="About" id="about">
         <div class="about-content">
             <div class="about-img">
-                <img src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171867_X85WpWCcMzNsoMWtMxiZQspKzaOwCyuK.jpg"
-                    alt="About Me Image" />
+                <img src="./about.png" alt="About Me Image" />
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
@@ -692,7 +703,9 @@
                     This setup creates a comprehensive portfolio website using <b>HTML, CSS, and JavaScript,</b>
                     suitable for showcasing work and engaging visitors effectively.
                 </p>
-                <button>Click Here</button>
+                <br>
+              
+                <a class="btn-box" href="./html_projects.html">Click Here</a>
             </div>
             <div class="portfolio-item">
                 <h2>CSS PROJECTS</h2>
@@ -700,7 +713,7 @@
                     Explore my CSS projects that demonstrate various design techniques and layouts. From responsive
                     design to animations, these projects showcase my skills in creating visually appealing web pages.
                 </p>
-                <button>Click Here</button>
+                <a class="btn-box" href="./css_project.html">Click Here</a>
             </div>
             <div class="portfolio-item">
                 <h2>JavaScript PROJECTS</h2>
@@ -708,7 +721,7 @@
                     Dive into my JavaScript projects that highlight my ability to create dynamic and interactive web
                     applications. These projects include features like form validation, API integration, and more.
                 </p>
-                <button>Click Here</button>
+                <a class="btn-box" href="./js_projects.html">Click Here</a>
             </div>
         </div>
     </section>
@@ -730,11 +743,11 @@
             </div>
             <div class="info-item">
                 <i class='bx bxl-github'></i>
-                <p>www.yourwebsite.com</p>
+                <p>https://github.com/AyushLFullStackDeveloper/AyushlFullStackDeveloper_new</p>
             </div>
             <div class="info-item">
                 <i class='bx bxl-skype'></i>
-                <p>www.yourwebsite.com</p>
+                <p>live:.cid.1b4f5574594c197c</p>
             </div>
         </div>
     </div>
