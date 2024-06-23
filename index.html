@@ -2,162 +2,790 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="portfolio.css" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* / Global reset and basic styling / */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* 
+/ Smooth scrolling for the entire page / */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* / Body styles / */
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            /* / Background image or video styles /
+  / Example: background: url('../watermarked_preview.mp4') no-repeat center fixed; / */
+        }
+
+        /* / Video container styles / */
+        #myVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        /* / Header container styles / */
+        .header-container {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: rgba(8, 27, 0, 0.204);
+            /* / Adjust header background color and opacity / */
+        }
+
+        /* / Header styles / */
+        .header {
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* / Logo styles / */
+        .logo {
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* / Menu icon styles / */
+        #menu-icon {
+            font-size: 2.4rem;
+            color: #fff;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* / Menu icon lines styles / */
+        .menu-icon-line {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        /* / Navbar container styles / */
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        /* / Navbar link styles / */
+        .navbar a {
+            position: relative;
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            color: #090202;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+            transition: color 0.3s;
+            padding: 0 10px;
+        }
+
+        /* / Navbar link underline styles / */
+        .navbar a:after {
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            height: 3px;
+            width: 100%;
+            left: 0;
+            bottom: -3px;
+            transition: width 0.3s, background-color 0.3s;
+        }
+
+        /* / Expand navbar link underline on hover / */
+        .navbar a:hover:after {
+            width: 100%;
+            background-color: #ff3c78;
+        }
+
+        /* / Change text color on navbar link hover / */
+        .navbar a:hover {
+            color: rgba(202, 30, 21, 0.957);
+        }
+
+        /* / Media query for screens up to 1024px (tablets and smaller screens) / */
+        @media (max-width: 1024px) {
+
+            /* / Adjust padding in the header for smaller screens / */
+            .header {
+                padding: 20px;
+            }
+
+            /* / Navbar styles for smaller screens / */
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 25vh;
+                background-color: rgba(177, 163, 163, 0.586);
+                color: white;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                z-index: 99;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+                display: none;
+            }
+
+            /* / Show navbar when active / */
+            .navbar.active {
+                transform: translateX(0%);
+                display: flex;
+            }
+
+            /* / Show menu icon on smaller screens / */
+            #menu-icon {
+                display: block;
+            }
+        }
+
+        /* / Media query for screens up to 768px (mobile devices) / */
+        /* Media query for screens up to 768px (mobile devices) */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px;
+            }
+
+            .navbar {
+                height: auto;
+                width: 100%;
+                background-color: rgba(177, 163, 163, 0.9);
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px 0;
+            }
+
+            .navbar a {
+                margin: 10px 0;
+            }
+
+            .home {
+                padding: 50px 5% 0;
+            }
+
+            .home-content {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+            .home-text {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .home-img {
+                width: 70vw;
+                margin-bottom: 20px;
+            }
+
+            .About {
+                padding: 50px 5%;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-img {
+                width: 70vw;
+                margin-bottom: 20px;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .Portfolio-content {
+                flex-direction: column;
+                align-items: center;
+                padding: 50px 5%;
+            }
+
+            .portfolio-item {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .Contact {
+                padding: 50px 5%;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-box {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+
+        /* / Additional media queries can be added here for other screen sizes /
+
+/ Home section styles / */
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 70px 10% 0;
+            overflow: hidden;
+        }
+
+        .home-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .home-text {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .home-text h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .home-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .home-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .home-img {
+            flex: 0 0 40%;
+            max-width: 30%;
+        }
+
+        .home-img img {
+            width: 100%;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .btn-box {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-box:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 991px) {
+            .home-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .home-text {
+                padding-right: 0;
+                margin-top: 30px;
+            }
+
+            .home-img {
+                flex: 0 0 60%;
+                max-width: 60%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .home {
+                padding: 50px 5% 0;
+            }
+
+            .home-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .home-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .home-text p {
+                font-size: 1rem;
+            }
+
+            .home-img {
+                flex: 0 0 80%;
+                max-width: 80%;
+            }
+
+            .btn-box {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-text h1 {
+                font-size: 2rem;
+            }
+
+            .home-img {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* / About section styles / */
+        .About {
+            padding: 100px 10%;
+            background-color: #f8f9fa3a;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-img {
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .about-img img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-text {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .about-text .btn-box {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .about-text .btn-box:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 991px) {
+            .About {
+                padding: 70px 5%;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-img,
+            .about-text {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .about-img {
+                margin-bottom: 30px;
+            }
+
+            .about-text {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .About {
+                padding: 50px 5%;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+
+            .about-text .btn-box {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .about-img {
+                max-width: 80%;
+                margin: 0 auto 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .About {
+                padding: 40px 5%;
+            }
+
+            .about-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-img {
+                max-width: 100%;
+            }
+
+            .about-text p {
+                font-size: 0.9rem;
+            }
+
+            .about-text .btn-box {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Portfolio section styles */
+        .Portfolio-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 100px 10%;
+            gap: 20px;
+            /* Adjust the gap between columns */
+        }
+
+        /* Portfolio item styles */
+        .Portfolio-content div {
+            flex: 1 1 calc(33.333% - 40px);
+            /* Adjust the width and spacing of columns */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 60px;
+        }
+
+        /* Portfolio item hover styles */
+        .Portfolio-content div:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Portfolio heading styles */
+        .Portfolio-content h2 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Portfolio paragraph styles */
+        .Portfolio-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Portfolio button styles */
+        .Portfolio-content button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: rgba(0, 234, 255, 0.681);
+            color: #081b00;
+            border: 2px solid rgb(0, 30, 255);
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        /* Portfolio button hover styles */
+        .Portfolio-content button:hover {
+            background-color: #081b0013;
+            color: rgba(255, 153, 0, 0.72);
+        }
+
+        /* Portfolio button active styles */
+        .Portfolio-content button:active {
+            transform: translateY(1px);
+        }
+
+        /* Contact section styles */
+        .contact-card {
+            background-color: #3333334f;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: auto;
+
+            margin: 2px auto;
+        }
+
+        .contact-card h2 {
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-item i {
+            color: #ffd700;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .info-item p {
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="header-container">
-    <div class="header">
-      <a href="#" class="logo">Ayush</a>
-      <div id="menu-icon">
-        <div class="menu-icon-line"></div>
-        <div class="menu-icon-line"></div>
-        <div class="menu-icon-line"></div>
-      </div>
-      <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#About">About</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#Contact">Contact</a>
-      </div>
+    <div class="header-container">
+        <div class="header">
+            <a href="#" class="logo">Ayush</a>
+            <div id="menu-icon">
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+                <div class="menu-icon-line"></div>
+            </div>
+            <div class="navbar">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#Contact">Contact</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="background-container"></div>
-  <div class="home-section">
-    <section class="home" id="home">
-      <video autoplay muted loop id="myVideo">
-        <source src="./watermarked_preview.mp4" type="video/mp4" />
-      </video>
-      <div class="home-content">
-        <div class="home-text">
-          <h3>Hello, It's Me</h3>
-          <h1>Ayush Lolusare</h1>
-          <h3>I'm a <span class="multiple-text"></span></h3>
-          <p>
-            I am passionate about coding and creating innovative solutions
-            <br />
-            that enhance user experiences.<br />
-            With a solid foundation in both front-end and back-end
-            technologies,<br />
-            I thrive in dynamic environments where problem-solving <br />
-            skills and creativity are key.
-          </p>
-          <br />
-          <br />
-          <a href="#About" class="btn-box">More About Me</a>
+    <div class="background-container"></div>
+    <div class="home-section">
+        <section class="home" id="home">
+            <video autoplay muted loop id="myVideo">
+                <source
+                    src="https://videos.pond5.com/smart-city-and-information-technology-footage-118285019_main_xxl.mp4"
+                    type="video/mp4" />
+            </video>
+            <div class="home-content">
+                <div class="home-text">
+                    <h3>Hello, It's Me</h3>
+                    <h1>Ayush Lolusare</h1>
+                    <h3>I'm a <span class="multiple-text"></span></h3>
+                    <p>
+                        I'm passionate about innovative coding solutions that enhance user experiences. With expertise
+                        in full-stack development, I excel in dynamic environments that demand problem-solving and
+                        creativity.
+                    </p>
+                    <a href="#About" class="btn-box">More About Me</a>
+                </div>
+                <div class="home-img">
+                    <img src="./my_profile_pic-removebg-preview.png" alt="profile_image" />
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="About" id="about">
+        <div class="about-content">
+            <div class="about-img">
+                <img src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171867_X85WpWCcMzNsoMWtMxiZQspKzaOwCyuK.jpg"
+                    alt="About Me Image" />
+            </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    My journey in programming began with a passion for building functional solutions from scratch. This
+                    drive led me to master languages like JavaScript, Python, and Java, enabling me to develop robust,
+                    scalable applications across various platforms.
+                </p>
+                <a href="#Contact" class="btn-box">Contact Me</a>
+            </div>
         </div>
-        <div class="home-img">
-          <img
-            src="https://camo.githubusercontent.com/b4e374638714436d8b2e4f7db25555cfa2a968d527f30b8e2f2946376d6bfe75/68747470733a2f2f70726f6d7074692e61692f77702d636f6e74656e742f75706c6f6164732f323032332f30372f7063626f69322e706e67"
-            alt="profile_image" />
-        </div>
-      </div>
     </section>
-  </div>
 
-  <div id="About"></div>
-  <section class="About">
-    <div class="about-content">
-      <div class="about-img">
-        <img src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171867_X85WpWCcMzNsoMWtMxiZQspKzaOwCyuK.jpg"
-          alt="About Me Image" />
-      </div>
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          My journey into programming began with a fascination for building
-          <br />
-          things from scratch and making them functional. <br />
-          This drive led me to master various programming languages <br />
-          such as JavaScript, Python, and Java, <br />
-          allowing me to develop robust and scalable applications across
-          <br />
-          different platforms.
-        </p>
-        <br>
-        <a href="#Contact" class="btn-box">Contact Me</a>
-      </div>
+    <section class="Portfolio" id="portfolio">
+        <div class="Portfolio-content">
+            <div class="portfolio-item">
+                <h2>HTML PROJECTS</h2>
+                <p>
+                    This setup creates a comprehensive portfolio website using <b>HTML, CSS, and JavaScript,</b>
+                    suitable for showcasing work and engaging visitors effectively.
+                </p>
+                <button>Click Here</button>
+            </div>
+            <div class="portfolio-item">
+                <h2>CSS PROJECTS</h2>
+                <p>
+                    Explore my CSS projects that demonstrate various design techniques and layouts. From responsive
+                    design to animations, these projects showcase my skills in creating visually appealing web pages.
+                </p>
+                <button>Click Here</button>
+            </div>
+            <div class="portfolio-item">
+                <h2>JavaScript PROJECTS</h2>
+                <p>
+                    Dive into my JavaScript projects that highlight my ability to create dynamic and interactive web
+                    applications. These projects include features like form validation, API integration, and more.
+                </p>
+                <button>Click Here</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="contact-card" id="Contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="info-item">
+                <i class='bx bx-current-location'></i>
+                <p> Nagpur, Maharashtra, India</p>
+            </div>
+            <div class="info-item">
+                <i class='bx bxs-phone'></i>
+                <p>+91 997095 4494</p>
+            </div>
+            <div class="info-item">
+                <i class='bx bxl-gmail'></i>
+                <p>ayushlolusare7@gmail.com</p>
+            </div>
+            <div class="info-item">
+                <i class='bx bxl-github'></i>
+                <p>www.yourwebsite.com</p>
+            </div>
+            <div class="info-item">
+                <i class='bx bxl-skype'></i>
+                <p>www.yourwebsite.com</p>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section class="Portfolio" id="portfolio">
-    <div class="Portfolio-content">
-      <div class="hmtl">
-        <h2>HTML,CSS And JS PROJECTS</h2>
-        <p>
-          This setup creates a comprehensive portfolio website using <b>HTML, CSS, and JavaScript,</b>  suitable for showcasing
-          work and engaging visitors effectively. Adjustments can be made to tailor the design and functionality to meet
-          specific preferences and additional feature needs.
-        </p>
-        <a href="../old_projecs/portfolio.html" class="btn-box"> Click Here</a>
-      </div>
-  </section>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Typed.js Initialization
+        const typed = new Typed(".multiple-text", {
+            strings: [
+                "Web Developer",
+                "Web Designer",
+                "Front-end Developer",
+                "Tester",
+                "Quality Assurance",
+                "Project Manager",
+                "FullStackDeveloper",
+            ],
+            typeSpeed: 70,
+            backSpeed: 70,
+            backDelay: 1000,
+            loop: true,
+        });
 
-  <div id="Contact"></div>
-  <footer class="Contact">
-    <div class="Contact-content">
-      <h1>Contact Us</h1>
-      <div class="home-sci">
-        <a href="#"><i class="bx bxl-skype"></i></a>
-        <a href="#"><i class="bx bxl-linkedin"></i></a>
-        <a href="#"><i class="bx bxl-github"></i></a>
-        <a href="#"><i class="bx bxl-gmail"></i></a>
-      </div>
-    </div>
-  </footer>
+        document.getElementById("menu-icon").onclick = function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        };
 
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    // Typed.js Initialization
-    const typed = new Typed(".multiple-text", {
-      strings: [
-        "Web Developer",
-        "Web Designer",
-        "Front-end Developer",
-        "Tester",
-        "Quality Assurance",
-        "Project Manager",
-        "FullStackDeveloper",
-      ],
-      typeSpeed: 70,
-      backSpeed: 70,
-      backDelay: 1000,
-      loop: true,
-    });
+        // JavaScript to close the navbar when clicking outside
+        document.addEventListener("click", function (event) {
+            var isClickInsideNavbar = document
+                .querySelector(".navbar")
+                .contains(event.target);
+            var isClickInsideMenuIcon = document
+                .querySelector("#menu-icon")
+                .contains(event.target);
+            document.addEventListener("click", function (event) {
+                const isClickInsideNavbar = event.target.closest(".navbar") !== null;
+                const isClickInsideMenuIcon =
+                    event.target.closest("#menu-icon") !== null;
 
-    document.getElementById("menu-icon").onclick = function () {
-      document.querySelector(".navbar").classList.toggle("active");
-    };
+                if (!isClickInsideNavbar && !isClickInsideMenuIcon) {
+                    document.querySelector(".navbar").classList.remove("active");
+                }
+            });
+        });
 
-    // JavaScript to close the navbar when clicking outside
-    document.addEventListener("click", function (event) {
-      var isClickInsideNavbar = document
-        .querySelector(".navbar")
-        .contains(event.target);
-      var isClickInsideMenuIcon = document
-        .querySelector("#menu-icon")
-        .contains(event.target);
-      document.addEventListener("click", function (event) {
-        const isClickInsideNavbar = event.target.closest(".navbar") !== null;
-        const isClickInsideMenuIcon =
-          event.target.closest("#menu-icon") !== null;
-
-        if (!isClickInsideNavbar && !isClickInsideMenuIcon) {
-          document.querySelector(".navbar").classList.remove("active");
-        }
-      });
-    });
-
-    // Existing JavaScript for menu icon toggle
-    document.getElementById("menu-icon").onclick = function () {
-      document.querySelector(".navbar").classList.toggle("active");
-    };
-  </script>
+        // Existing JavaScript for menu icon toggle
+        document.getElementById("menu-icon").onclick = function () {
+            document.querySelector(".navbar").classList.toggle("active");
+        };
+    </script>
 </body>
 
 </html>
