@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- styling -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .display {
+            background-color: #fff;
+            color: #333;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.5em;
+            border: none;
+            cursor: pointer;
+            background-color: #555;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #777;
+        }
+
+        .number {
+            background-color: #444;
+        }
+
+        .operator {
+            background-color: #ff9500;
+        }
+
+        .equal {
+            background-color: #00b894;
+        }
+
+        .clear {
+            background-color: #ea4c4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <table>
+            <tr>
+                <td colspan="4" class="display">0</td>
+            </tr>
+            <tr>
+                <td><button class="number">7</button></td>
+                <td><button class="number">8</button></td>
+                <td><button class="number">9</button></td>
+                <td><button class="operator">/</button></td>
+            </tr>
+            <tr>
+                <td><button class="number">4</button></td>
+                <td><button class="number">5</button></td>
+                <td><button class="number">6</button></td>
+                <td><button class="operator">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="number">1</button></td>
+                <td><button class="number">2</button></td>
+                <td><button class="number">3</button></td>
+                <td><button class="operator">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="clear">C</button></td>
+                <td><button class="number">0</button></td>
+                <td><button class="operator">+</button></td>
+                <td><button class="equal">=</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

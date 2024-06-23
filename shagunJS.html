@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* main */
+        .main {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* heading */
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* submit */
+        .submit {
+            width: 150px;
+            height: 50px;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit:hover {
+            background-color: #ffcc00;
+        }
+
+        #display {
+            width: 80%;
+            height: 100px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <!-- script -->
+    <script>
+        function displayFunction(shagunOne, shagunTwo) {
+            let collectedvalue = add(shagunOne, shagunTwo);
+            document.getElementById("display").innerHTML =
+                "The total amount of shagun is: " + collectedvalue;
+        }
+
+        function add(numberOne, numberTwo) {
+            let total = numberOne + numberTwo;
+            return total;
+        }
+
+        function clearFunction() {
+            document.getElementById("display").innerHTML = "";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- main division -->
+    <div class="main">
+        <h1>This Is A Shagun Program</h1>
+        <!-- heading -->
+        <h1 id="display"></h1>
+        <div id="display"></div>
+        <button class="submit" onclick="displayFunction(1000, 1000)" style="background-color: #ff6f61;">
+            Click Here
+        </button>
+
+        <button class="submit" onclick="clearFunction()" style="background-color: #66d9e8;">CLEAR</button>
+    </div>
+</body>
+
+</html>

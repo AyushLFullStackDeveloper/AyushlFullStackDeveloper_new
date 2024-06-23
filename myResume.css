@@ -1,0 +1,119 @@
+.one {
+    text-align: center;
+    font-family: cursive;
+    border-style: double;
+    border-width: 5px;
+    border-color: lightslategrey;
+    border-block-start-color: rgb(203, 202, 207);
+
+}
+
+.two {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.three {
+    text-align: right;
+}
+
+.four {
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgba(152, 143, 156, 0.303);
+    border-style: groove;
+}
+
+.body {
+    background-color:grey;
+    page-break-inside: auto;
+    border: 7px;
+    
+}
+
+.text {
+    text-align: center;
+    font-family: Roboto Slab;
+}
+
+
+
+.orange {
+    text-align: right;
+}
+
+.link {
+    text-align: right;
+}
+
+.px {
+    font-family: Cormorant Garamond;
+    font-size: large;
+}
+
+.last {
+    text-align: center;
+    background-color: rgb(192, 210, 111);
+    border-style: double;
+    border-color: rgb(92, 157, 28);
+}
+
+.color {
+    border-style: inherit;
+    border-color: rgb(123, 61, 61);
+}
+
+page{
+    background-color: rgb(222, 241, 242);
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    position: relative;
+    border-width: 3px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 19cm;
+    height: 42cm;
+   box-shadow:  top 20px bottom 20px left 20px right 20px  grey;
+    
+    
+
+}
+
+html {
+    border: 100px;
+}
+
+img {
+    border-radius: 50%;
+    border-style: outset;
+
+}
+
+.hero {
+    text-align: center;
+    font-size: xx-large;
+    font-style: normal;
+    background-color: rgb(144, 240, 176);
+    border-style: double;
+}
+
+/* new */
+.container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.image {
+    margin-right: 20px;
+    float: right;
+}
+
+.text {
+    margin-bottom: 110px;
+    margin-left: 60px;
+    font-weight: 900px;
+}

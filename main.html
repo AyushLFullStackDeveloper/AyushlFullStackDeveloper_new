@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- internal styling -->
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            background-color: #CCD3CA;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .display {
+            background-color: #7f962d;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        .input-box {
+            background-color: #302835;
+            border-radius: 10px;
+            color: #fff;
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .input-box input {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 90%;
+            font-size: 1.2rem;
+        }
+
+        .button {
+            background-color: #434443;
+            border-radius: 10px;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #5a5a5a;
+        }
+    </style>
+    <script>
+
+        function Play() {
+            let student = [];
+            let i = 0;
+            while (i < 3) {
+                student["fisrtName"] = prompt("enter first name = ");
+                student["lastName"] = prompt("enter last name = ");
+                console.log(student);
+                i++;
+
+                let j = 0;
+                while (j < student.length) {
+                    console.log("firstName =", student.fisrtName = "last name =", student.lastName);
+                    j++;
+                }
+            }
+
+        }
+
+
+        // function dictionary() {
+        //     let student = {};
+
+        //     student["firstName"] = "AYUSH";
+        //     student["lastName"] = prompt("ENTER LAST NAME = ");
+
+        //     console.log(
+        //         "the student details is firstName = ",
+        //         student.fistName,
+        //         "LASTNAME = ",
+        //         student.lastName
+        //     );
+        // }
+
+
+        // function dictionary(){
+        //     let student = {
+        //         fistName: "Ayush",
+        //         rollnumber: 24,
+        //         lastName: "Lolusare",
+        //     };
+
+        //   console.log(
+        //     "the student details is firstName = ",
+        //     student.fistName,
+        //     "LASTNAME",
+        //     student.lastName
+        //   );
+
+        // }
+
+
+
+
+
+        // let coins = 100;
+        // function startPlay(){
+        //     document.getElementById("loader").style.display = "block";
+        //     setTimeout(()=>{
+        //     playLottery()
+        //     },1000);
+        // }
+        // function playLottery(){
+        //     document.getElementById("loader").style.display ="none" ;
+        //     let output = parseInt((Math.random * 100) / 10);
+        //     let betNumber = document.getElementById("input").value;
+        //     let betCoins = document.getElementById("coins").value;
+        //     if (betCoins > coins){
+        //         document.getElementById("display- text").innerHTML =
+        //         "Check Your bet it's more than your coins";
+        //         return;
+        //     }
+        //     if (betNumber == output) {
+        //         coins += betCoins * 9;
+        //     } else {
+        //         coins -= betCoins;
+        //     }
+        //     document.getElementById("display-text").innerHTML =
+        //   "Lottery Number = " + output + "<BR/>Your Coins is " + coins;
+        // }
+
+
+
+        // function myFunction(paraOne, paraTwo) {
+        // parameter define
+
+        // let xvariable = 123 ;
+        // console.log("The Result___", paraOne , paraTwo , xvariable);
+
+        // second type box
+
+        // let a = document.getElementById("input").value;
+        // let b = document.getElementById("coins").value;
+        // console.log("The Result___", a, b);
+        // }
+
+        // function myFunction() {
+        //     // INPUT
+        //     let x = (document.getElementById("one").value);
+        //     let y = (document.getElementById("two").value);
+        //     //   PROCESS
+        //     let z = process("div", x, y);
+        //     // OUTPUT
+        //     outcome(z)
+        //     output = z;
+        //     let result = output;
+        //     console.log("CHECK ONE", result);
+        // }
+
+        // function process(action, x, y) {
+        //     let result = 0;
+        //     if (action == "add") {
+        //         result = Number(x) + Number(y);
+        //     }
+        //     else if (action == "sub") {
+        //         result = Number(x) - Number(y);
+        //     }
+        //     else if (action == "mul") {
+        //         result = Number(x) * Number(y);
+        //     }
+        //     else if (action == "div") {
+        //         result = Number(x) / Number(y);
+        //     }
+
+        //     console.log("CHECK TWO", result);
+        //     return result;
+
+        // }
+
+        // function outcome(result) {
+        //     document.getElementById("display").innerHTML = result;
+        //      return result;
+        // }
+
+        // function playMusic() {
+        //     sa();
+        //     re();
+        // }
+
+        // function sa() {
+        //     console.log("SA")
+        // }
+        // function re() {
+        //     console.log("RE")
+        // }
+        // function gg() {
+        //     console.log("GG")
+        // }
+        // function mm() {
+        //     console.log("MM")
+        // }
+
+        // function daysRemaining() {
+        //     // INPUT
+        //     let x = prompt("ENTER YOUR AGE");
+        //     let y = Number(x);
+        //     // PROCCESS
+        //     let z = 100 - y;
+        //     let days = z * 365;
+        //     // OUTPUT
+
+        //     console.log("age",days)
+        //     document.getElementById("display").innerHTML = days + "<br/> -DAYS REMAINING";
+        // }
+
+        // function daysRemaining() {
+        //     let x = prompt("ENTER YUOR AGE");
+        //     let y = Number(x);
+        //     let points = 0;
+        //     let runningMeter = 0;
+
+        //     // process
+        //     if (y < 25) {
+        //         points += (25 - y) * 26;
+        //     }
+        // }
+
+
+        // function daysRemaining() {
+        //     let x = 7;
+        //     let y = num.toString();
+
+
+        //     console.log("PRINT Y =", y, x)
+        //     document.getElementById("display").innerHTML = y + "DAYS REMAINING";
+        // }
+    </script>
+</head>
+
+<body style="margin: 0px;">
+    <!-- main section -->
+    <div class="main">
+        <div class="display">
+            <h1 id="display"></h1>
+            <!-- loader using -->
+            <!-- <div class="loader" id="loader"></div> -->
+        </div>
+        <!-- input text use -->
+        <input type="number" class="input-box" id="one" placeholder="Bet Number" />
+        <input type="number" class="input-box" id="two" placeholder="Coins" />
+        <!-- button using -->
+        <div class="input-container">
+            <button class="button" onclick="Play()">Play</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

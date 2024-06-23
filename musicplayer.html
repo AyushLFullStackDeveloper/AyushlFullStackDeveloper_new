@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container styles */
+        .container {
+            width: 90%;
+            height: 50vh;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            position: relative; /* Added */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Audio controls styles */
+        .audio-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .audio-controls button {
+            padding: 10px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .audio-controls button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Image animation */
+        .rotate {
+            animation: rotateImage 2s linear infinite; /* Added */
+        }
+
+        @keyframes rotateImage {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Image styles */
+        .image {
+            max-width: 80%; /* Adjusted */
+            height: auto; /* Maintain aspect ratio */
+            align-self: center; /* Center horizontally */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <audio id="audio1" src="Pehle Bhi Main (Animal)-(Mr-Jat.in).mp3"></audio>
+        <audio id="audio2" src="Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3"></audio>
+        <audio id="audio3" src="old_Rakta Charitra - Mila Toh Marega.mp3"></audio>
+        <!-- Audio controls -->
+        <div class="audio-controls">
+            <button onclick="playPrevious()"><img src="previous.png" height="30px"></button>
+            <button onclick="playAll()"><img src="./play-button.png" height="30px"></button>
+            <button onclick="pauseAll()"><img src="pause.png" height="30px"></button>
+            <button onclick="playNext()"><img src="./fast-forward.png" height="30px"></button>
+            
+        </div>
+        <hr/>
+        <img class="image" src="./song-image1.png">
+    </div>
+
+    <script>
+        const audioElements = [
+            document.getElementById('audio1'),
+            document.getElementById('audio2'),
+            document.getElementById('audio3')
+        ];
+        let currentAudioIndex = 0;
+
+        function playAll() {
+            audioElements[currentAudioIndex].play();
+            document.querySelector('.image').classList.add('rotate'); // Add rotate class to start rotation
+        }
+
+        function pauseAll() {
+            audioElements[currentAudioIndex].pause();
+            document.querySelector('.image').classList.remove('rotate'); // Remove rotate class to stop rotation
+        }
+
+        function stopAll() {
+            audioElements[currentAudioIndex].pause();
+            audioElements[currentAudioIndex].currentTime = 0;
+            document.querySelector('.image').classList.remove('rotate'); // Remove rotate class to stop rotation
+        }
+
+        function playPrevious() {
+            stopAll();
+            currentAudioIndex = (currentAudioIndex - 1 + audioElements.length) % audioElements.length;
+            playAll();
+        }
+
+        function playNext() {
+            stopAll();
+            currentAudioIndex = (currentAudioIndex + 1) % audioElements.length;
+            playAll();
+        }
+    </script>
+</body>
+
+</html>
