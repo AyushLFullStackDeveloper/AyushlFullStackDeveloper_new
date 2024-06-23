@@ -218,6 +218,8 @@ body {
   }
 }
 
+/* Additional media queries can be added here for other screen sizes */
+
 /* Home section styles */
 .home {
   display: flex;
@@ -384,7 +386,7 @@ body {
 /* Portfolio section styles */
 .Portfolio-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   padding: 100px 10%;
 }
@@ -427,17 +429,18 @@ body {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: rgba(0, 174, 255, 0.507);
+  background-color: rgba(0, 174, 255, 0.862);
   color: #081b00;
   border: 2px solid rgb(0, 30, 255);
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 /* Portfolio button hover styles */
 .Portfolio-content button:hover {
   background-color: #081b000e;
-  color: rgba(255, 153, 0, 0.72);
+  color: rgba(0, 255, 4, 0.53);
 }
 
 /* Portfolio button active styles */
