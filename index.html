@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="icon" type="x/icon" href="https://cdn.freebiesupply.com/logos/large/2x/a-logo-black-and-white.png">
     <style>
         /* / Global reset and basic styling / */
         * {
@@ -28,7 +29,7 @@
             padding: 0;
             background-size: cover;
             /* / Background image or video styles /
-  / Example: background: url('../watermarked_preview.mp4') no-repeat center fixed; / */
+            / Example: background: url('../watermarked_preview.mp4') no-repeat center fixed; / */
         }
 
         /* / Video container styles / */
@@ -206,7 +207,7 @@
             }
 
             .home-img {
-                width: 70vw;
+                width: 72vw;
                 margin-bottom: 20px;
             }
 
@@ -303,7 +304,7 @@
         }
 
         .home-img img {
-            width: 33vw;
+            width: 40vw;
             height: 70vh;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -419,7 +420,6 @@
 
         .about-img img:hover {
             transform: scale(1.05);
-
         }
 
         .about-text {
@@ -666,14 +666,14 @@
                     <h1>Ayush Lolusare</h1>
                     <h3>I'm a <span class="multiple-text"></span></h3>
                     <p>
-                        I'm passionate about innovative coding solutions that enhance user experiences. With expertise
-                        in full-stack development, I excel in dynamic environments that demand problem-solving and
-                        creativity.
+                        I'm passionate about innovative coding solutions that enhance user
+                        experiences. With expertise in full-stack development, I excel in
+                        dynamic environments that demand problem-solving and creativity.
                     </p>
-                    <a href="#About" class="btn-box">More About Me</a>
+                    <a href="#about" class="btn-box">More About Me</a>
                 </div>
                 <div class="home-img">
-                    <img src="./my_profile_pic-removebg-preview.png" alt="profile_image" />
+                    <img src="./home_image-removebg-preview.png" alt="profile_image" />
                 </div>
             </div>
         </section>
@@ -681,14 +681,15 @@
     <section class="About" id="about">
         <div class="about-content">
             <div class="about-img">
-                <img src="./about.png" alt="About Me Image" />
+                <img src="./about_image-removebg-preview copy.png" alt="About Me Image" />
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
                 <p>
-                    My journey in programming began with a passion for building functional solutions from scratch. This
-                    drive led me to master languages like JavaScript, Python, and Java, enabling me to develop robust,
-                    scalable applications across various platforms.
+                    My journey in programming began with a passion for building
+                    functional solutions from scratch. This drive led me to master
+                    languages like JavaScript, Python, and Java, enabling me to develop
+                    robust, scalable applications across various platforms.
                 </p>
                 <a href="#Contact" class="btn-box">Contact Me</a>
             </div>
@@ -700,26 +701,29 @@
             <div class="portfolio-item">
                 <h2>HTML PROJECTS</h2>
                 <p>
-                    This setup creates a comprehensive portfolio website using <b>HTML, CSS, and JavaScript,</b>
+                    This setup creates a comprehensive portfolio website using
+                    <b>HTML, CSS, and JavaScript,</b>
                     suitable for showcasing work and engaging visitors effectively.
                 </p>
-                <br>
-              
-                <a class="btn-box" href="./html_projects.html">Click Here</a>
+                <br />
+                <br />
+                <a class="btn-box" href="./htmlProjects.html">Click Here</a>
             </div>
             <div class="portfolio-item">
                 <h2>CSS PROJECTS</h2>
                 <p>
-                    Explore my CSS projects that demonstrate various design techniques and layouts. From responsive
-                    design to animations, these projects showcase my skills in creating visually appealing web pages.
+                    Explore my CSS projects that demonstrate various design techniques
+                    and layouts. From responsive design to animations, these projects
+                    showcase my skills in creating visually appealing web pages.
                 </p>
-                <a class="btn-box" href="./css_project.html">Click Here</a>
+                <a class="btn-box" href="./cssProjects.html">Click Here</a>
             </div>
             <div class="portfolio-item">
                 <h2>JavaScript PROJECTS</h2>
                 <p>
-                    Dive into my JavaScript projects that highlight my ability to create dynamic and interactive web
-                    applications. These projects include features like form validation, API integration, and more.
+                    Dive into my JavaScript projects that highlight my ability to create
+                    dynamic and interactive web applications. These projects include
+                    features like form validation, API integration, and more.
                 </p>
                 <a class="btn-box" href="./js_projects.html">Click Here</a>
             </div>
@@ -730,24 +734,32 @@
         <h2>Contact Us</h2>
         <div class="contact-info">
             <div class="info-item">
-                <i class='bx bx-current-location'></i>
-                <p> Nagpur, Maharashtra, India</p>
+                <i class="bx bx-current-location"></i>
+                <p>Nagpur, Maharashtra, India</p>
             </div>
             <div class="info-item">
-                <i class='bx bxs-phone'></i>
+                <i class="bx bxs-phone"></i>
                 <p>+91 997095 4494</p>
             </div>
             <div class="info-item">
-                <i class='bx bxl-gmail'></i>
-                <p>ayushlolusare7@gmail.com</p>
+                <i class="bx bxl-gmail"></i>
+                <p onclick="copyEmail()">ayushlolusare7@gmail.com</p>
             </div>
             <div class="info-item">
-                <i class='bx bxl-github'></i>
-                <p>https://github.com/AyushLFullStackDeveloper/AyushlFullStackDeveloper_new</p>
+                <i class="bx bxl-github"></i>
+                <a href="https://github.com/AyushLFullStackDeveloper/ayushlolusare-New_projectas" style="color: white;">
+                    <p>Github</p>
+                </a>
             </div>
             <div class="info-item">
-                <i class='bx bxl-skype'></i>
-                <p>live:.cid.1b4f5574594c197c</p>
+                <i class='bx bxl-linkedin'></i>
+                <a href="https://in.linkedin.com/in/ayush-lolusare-a047322a8" style="color: white;">
+                    <p>Linked In</p>
+                </a>
+            </div>
+            <div class="info-item">
+                <i class="bx bxl-skype"></i>
+                <p onclick="copySkype()">Ayush Lolusare</p>
             </div>
         </div>
     </div>
@@ -798,6 +810,29 @@
         document.getElementById("menu-icon").onclick = function () {
             document.querySelector(".navbar").classList.toggle("active");
         };
+
+        function copyEmail() {
+            const email = "ayushlolusare7@gmail.com";
+            navigator.clipboard
+                .writeText(email)
+                .then(() => {
+                    alert("Email copied to clipboard");
+                })
+                .catch((err) => {
+                    console.error("Failed to copy email: ", err);
+                });
+        }
+        function copySkype() {
+            const email = "Ayush Lolusare";
+            navigator.clipboard
+                .writeText(email)
+                .then(() => {
+                    alert("skype name copied to clipboard");
+                })
+                .catch((err) => {
+                    console.error("Failed to copy email: ", err);
+                });
+        }
     </script>
 </body>
 
